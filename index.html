@@ -4,31 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intensely Relaxed</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        @keyframes glowShift {
+            0% {
+                filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.6))
+                       drop-shadow(0 0 20px rgba(138, 43, 226, 0.4))
+                       drop-shadow(0 0 30px rgba(138, 43, 226, 0.2))
+                       drop-shadow(0 0 10px rgba(0, 255, 127, 0.6))
+                       drop-shadow(0 0 20px rgba(0, 255, 127, 0.4))
+                       drop-shadow(0 0 30px rgba(0, 255, 127, 0.2));
+            }
+            33% {
+                filter: drop-shadow(10px 10px 10px rgba(138, 43, 226, 0.6))
+                       drop-shadow(20px 20px 20px rgba(138, 43, 226, 0.4))
+                       drop-shadow(30px 30px 30px rgba(138, 43, 226, 0.2))
+                       drop-shadow(-10px -10px 10px rgba(0, 255, 127, 0.6))
+                       drop-shadow(-20px -20px 20px rgba(0, 255, 127, 0.4))
+                       drop-shadow(-30px -30px 30px rgba(0, 255, 127, 0.2));
+            }
+            66% {
+                filter: drop-shadow(-10px 10px 10px rgba(138, 43, 226, 0.6))
+                       drop-shadow(-20px 20px 20px rgba(138, 43, 226, 0.4))
+                       drop-shadow(-30px 30px 30px rgba(138, 43, 226, 0.2))
+                       drop-shadow(10px -10px 10px rgba(0, 255, 127, 0.6))
+                       drop-shadow(20px -20px 20px rgba(0, 255, 127, 0.4))
+                       drop-shadow(30px -30px 30px rgba(0, 255, 127, 0.2));
+            }
+            100% {
+                filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.6))
+                       drop-shadow(0 0 20px rgba(138, 43, 226, 0.4))
+                       drop-shadow(0 0 30px rgba(138, 43, 226, 0.2))
+                       drop-shadow(0 0 10px rgba(0, 255, 127, 0.6))
+                       drop-shadow(0 0 20px rgba(0, 255, 127, 0.4))
+                       drop-shadow(0 0 30px rgba(0, 255, 127, 0.2));
+            }
         }
 
         .logo {
             max-width: 50%;
             height: auto;
-            filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.6))  /* Purple glow */
-                   drop-shadow(0 0 20px rgba(138, 43, 226, 0.4))
-                   drop-shadow(0 0 30px rgba(138, 43, 226, 0.2))
-                   drop-shadow(0 0 10px rgba(0, 255, 127, 0.6))    /* Green glow */
-                   drop-shadow(0 0 20px rgba(0, 255, 127, 0.4))
-                   drop-shadow(0 0 30px rgba(0, 255, 127, 0.2));
+            animation: glowShift 8s ease-in-out infinite;
         }
     </style>
 </head>
-<body>
-    <img src="logo.svg" alt="Intensely Relaxed Logo" class="logo">
+<body class="bg-black min-h-screen flex items-center justify-center">
+    <img src="logo-transparent.svg" alt="Intensely Relaxed Logo" class="logo">
 </body>
 </html>
 
